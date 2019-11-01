@@ -14,3 +14,8 @@ h6 {
 main {
   overflow: auto;
 }
+
+/* hacky hack */
+ul.list-group {
+  min-height: 300px;
+}
