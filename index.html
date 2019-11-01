@@ -6,21 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <title>Task+</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Taskinator Pro</title>
 </head>
 
 <body>
 
-  <div class="row vh-100 no-gutters">
-    <header class="vh-100 col-12 col-md-3 bg-dark d-flex text-light">
-      <div class="m-auto m-md-3 d-flex flex-column">
+  <div class="row min-vh-100 no-gutters">
+    <header class="col-12 col-lg-3 bg-dark text-light">
+      <div class="m-auto m-lg-3 flex-column d-none d-lg-flex">
         <h1>Taskinator Pro Edition</h1>
-        <button id="create-task" class="btn btn-block btn-success mt-auto">Add Task</button>
+        <button id="create-task" class="btn btn-block btn-success">Add Task</button>
         <button id="audit-tasks" class="btn btn-block btn-warning mb-2 mb-md-4">Audit Tasks</button>
       </div>
+      <nav class="d-lg-none d-flex flex-wrap align-items-center p-3">
+        <h1>Taskinator Pro Edition</h1>
+        <button id="create-task" class="btn btn-success ml-auto">Add Task</button>
+        <button id="audit-tasks" class="btn btn-warning mx-2">Audit Tasks</button>
+      </nav>
     </header>
-    <main class="col-12 col-md-9">
-      <div class="m-5">
+    <main class="col-12 col-lg-9 d-flex flex-column">
+      <div class="m-5 ">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugit officia rem? Perspiciatis fugit quasi,
           asperiores quam odit adipisci alias ad. Sint obcaecati esse vero aliquam commodi! Unde, quos blanditiis?
@@ -28,11 +37,12 @@
 
         <div class="row justify-content-around">
           <!--  -->
-          <div class="col-12 col-sm-6 col-3 mb-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="card">
-              <div class="card-header">
+              <h4 class="card-header d-flex align-items-center">
                 To Do
-              </div>
+                <span class="oi oi-plus ml-auto add-task"></span>
+              </h4>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -41,11 +51,13 @@
             </div>
           </div>
           <!--  -->
-          <div class="col-12 col-sm-6 col-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="card">
-              <div class="card-header">
+              <h4 class="card-header d-flex align-items-center">
                 In Progress
-              </div>
+                <span class="oi oi-plus ml-auto add-task"></span>
+
+              </h4>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -54,11 +66,13 @@
             </div>
           </div>
           <!--  -->
-          <div class="col-12 col-sm-6 col-3 mb-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="card">
-              <div class="card-header">
+              <h4 class="card-header d-flex align-items-center">
                 In Review
-              </div>
+                <span class="oi oi-plus ml-auto add-task"></span>
+
+              </h4>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -67,11 +81,13 @@
             </div>
           </div>
           <!--  -->
-          <div class="col-12 col-sm-6 col-3 mb-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="card">
-              <div class="card-header">
+              <h4 class="card-header d-flex align-items-center">
                 Done (Ready for Production)
-              </div>
+                <span class="oi oi-plus ml-auto add-task"></span>
+
+              </h4>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -80,11 +96,13 @@
             </div>
           </div>
           <!--  -->
-          <div class="col-12 col-sm-6 col-3 mb-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="card">
-              <div class="card-header">
+              <h4 class="card-header d-flex align-items-center">
                 In Production
-              </div>
+                <span class="oi oi-plus ml-auto add-task"></span>
+
+              </h4>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
