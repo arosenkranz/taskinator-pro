@@ -69,6 +69,9 @@ $(".card .list-group").sortable({
   connectWith: $(".card .list-group"),
   scroll: false,
   tolerance: "pointer",
+  start: function(event, ui) {
+    $(".bottom-trash").addClass("bottom-trash-active");
+  },
   over: function(event) {
     $(event.target).addClass("hover");
   },
@@ -77,7 +80,7 @@ $(".card .list-group").sortable({
   },
   update: function() {
     var tempArr = [];
-
+    
     // loop over current set of children in sortable list
     $(this).children().each(function() {
       // save values in temp array
@@ -93,6 +96,9 @@ $(".card .list-group").sortable({
     // update array on tasks object and save
     tasks[arrName] = tempArr;
     saveTasks();
+  },
+  stop: function(event) {
+    $(".bottom-trash").removeClass("bottom-trash-active");
   }
 });
 
@@ -105,8 +111,10 @@ $("#trash").droppable({
     ui.draggable.remove();
 
     $(this).removeClass("hover");
+    $(this).removeClass("bottom-trash-active");
   },
   over: function(event, ui) {
+    console.log(ui);
     $(this).addClass("hover");
   },
   out: function(event, ui) {
@@ -224,6 +232,16 @@ $(".list-group").on("change", "input[type='text']", function() {
   // recreate span and insert in place of input element
   var taskSpan = $("<span>").addClass("badge badge-primary badge-pill").text(date);
   $(this).replaceWith(taskSpan);
+});
+
+// remove all tasks
+$("#remove-tasks").on("click", function() {
+  for (var key in tasks) {
+    tasks[key].length = 0;
+    $("#list-" + key).empty();
+  }
+  console.log(tasks);
+  saveTasks();
 });
 
 // load tasks for the first time
